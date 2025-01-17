@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-// Định nghĩa lớp Node biểu diễn mỗi nút trong cây nhị phân
+// Define the Node class to represent each node in the binary tree
 class Node
 {
     public int Data;
@@ -15,7 +17,7 @@ class Node
     }
 }
 
-// Định nghĩa lớp BinaryTree để biểu diễn cây nhị phân
+// Define the BinaryTree class to represent a binary tree
 class BinaryTree
 {
     public Node Root;
@@ -25,7 +27,7 @@ class BinaryTree
         Root = null;
     }
 
-    // Hàm duyệt cây nhị phân theo thứ tự post-order
+    // The function traverses the binary tree in post-order
     public void PostOrderTraversal(Node node)
     {
         if (node == null)
@@ -33,13 +35,13 @@ class BinaryTree
             return;
         }
 
-        // Duyệt cây con bên trái
+        // Browse the subtree on the left
         PostOrderTraversal(node.Left);
 
-        // Duyệt cây con bên phải
+        // Browse the subtree on the right
         PostOrderTraversal(node.Right);
 
-        // Xử lý nút hiện tại
+        // Process the current node
         Console.Write(node.Data + " ");
     }
 }
@@ -48,7 +50,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Tạo một cây nhị phân mẫu
+        // Create a sample binary tree
         BinaryTree tree = new BinaryTree();
 
         /*
